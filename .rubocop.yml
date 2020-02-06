@@ -1,0 +1,49 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false
+
+# AllCops:
+#   Exclude:
+#     - 'bin/**/*'
+
+# Metrics/MethodLength:
+#   Enabled: false
+
+# Style/Documentation:
+#   Enabled: false
+
+
+### RSPEC SUPPORT ###
+
+# Capybara/FeatureMethods:
+#   Enabled: false
+
+# RSpec:
+#   Enabled: true
+
+# RSpec/NestedGroups:
+#   Enabled: false
+
+# RSpec/MultipleExpectations:
+#   Enabled: false
+
+# RSpec/ExampleLength:
+#   Enabled: false
+
+# RSpec/EmptyExampleGroup:
+#   Exclude:
+#     - 'spec/acceptance/**/*'

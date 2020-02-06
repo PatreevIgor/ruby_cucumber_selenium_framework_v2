@@ -1,27 +1,20 @@
 require 'selenium-webdriver'
 require 'rspec'
 require 'pry'
+require 'require_all'
 
-# Initialize block
-PROJECT_PATH = '/home/administrator/projects/ruby_cucumber_selenium_framework'.freeze
+require_all 'pages'
 
-# Adding files
-require "#{PROJECT_PATH}/base/elements.rb"
-require "#{PROJECT_PATH}/base/methods.rb"
-require "#{PROJECT_PATH}/base/pathes.rb"
-require "#{PROJECT_PATH}/base/base_page.rb"
-Dir["#{PROJECT_PATH}/pages/*.rb"].each { |file| require file }
-
-Before do |scenario|
-  puts 'Before block'
+Before do
   options = Selenium::WebDriver::Chrome::Options.new
   options.add_argument('--ignore-certificate-errors')
   options.add_argument('--disable-popup-blocking')
   options.add_argument('--disable-translate')
 
   $driver = Selenium::WebDriver.for :chrome, options: options
+  $driver.manage.timeouts.implicit_wait = 10
 end
 
-After do |scenario|
-  puts 'After block'
+After do
+  $driver.quit
 end
